@@ -1,16 +1,16 @@
 <?php
 $models = array(
 	//STORE
-	'depcat' => array(
-		'namemodel' => 'DepCatCategory',
-		'relation' => array('depcatoption'),
+	'ccatalog' => array(
+		'namemodel' => 'ccatalogCategory',
+		'relation' => array('ccatalogoption'),
 	),
-	'depcatoption' => array(
-		'namemodel' => 'DepCatOption',
-		'relation' => array('depcatoptionparams'),
+	'ccatalogoption' => array(
+		'namemodel' => 'ccatalogOption',
+		'relation' => array('ccatalogoptionparams'),
 	),
-	'depcatoptionparams' => array(
-		'namemodel' => 'DepCatOptionParam',
+	'ccatalogoptionparams' => array(
+		'namemodel' => 'ccatalogOptionParam',
 	),
 	'graphic_sale' => array(
 		'controller' => 'admin/dep_store/graphic_sale.php',
