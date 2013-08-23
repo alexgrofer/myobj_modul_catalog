@@ -30,6 +30,5 @@ CREATE TABLE `setcms_ccatalog_option_params` (
 	`codeval` varchar(255) NOT NULL,
 	`id_option` int(11) NOT NULL,
 	PRIMARY KEY (`id`),
-	KEY `id_option` (`id_option`),
-	CONSTRAINT `setcms_ccatalog_option_params_ibfk_id_option` FOREIGN KEY (`id_option`) REFERENCES `setcms_ccatalog_category_option` (`id`) ON UPDATE CASCADE
+	CONSTRAINT `setcms_ccatalog_option_ibfk_id_option` FOREIGN KEY (`id_option`) REFERENCES `setcms_ccatalog_option` (`id`) ON UPDATE CASCADE
 );
