@@ -1,13 +1,14 @@
 <?php
 $menu_user = array(
-	'ccatalog'=>array('label'=>'ccatalog', 'url'=>array('admin/objects/models/ccatalog'),
+	'catalog'=>array('label'=>'catalog',
 		'items'=>array(
-			'ccatalogoption'=>array('label'=>'ccatalogoption', 'url'=>array('admin/objects/models/ccatalogoption'),
+			'section'=>array('label'=>'section', 'url'=>array('admin/objects/models/ccatalog')),
+			'sectionoption'=>array('label'=>'section option', 'url'=>array('admin/objects/models/ccatalogoption'),
 				'items'=>array(
-					'ccatalogoptionparams'=>array('label'=>'ccatalogoptionparams', 'url'=>array('admin/objects/models/ccatalogoptionparams'))
+					'optionparams'=>array('label'=>'option params', 'url'=>array('admin/objects/models/ccatalogoptionparams'))
 				),
 			),
-			'graphic_sale'=>array('label'=>'graphic_sale', 'url'=>array('admin/objects/ui/graphic_sale')),
+			'graphic_sale'=>array('label'=>'graphic sales', 'url'=>array('admin/objects/ui/graphic_sale')),
 		),
 	),
 );
