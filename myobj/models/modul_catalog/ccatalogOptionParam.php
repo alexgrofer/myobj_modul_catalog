@@ -11,7 +11,7 @@ class ccatalogOptionParam extends AbsModel
 	public function relations()
 	{
 		return array(
-			'ccatalogoption'=>array(self::HAS_ONE, 'ccatalogOption', 'id_option'),
+			'ccatalogOption'=>array(self::BELONGS_TO, 'ccatalogOption', 'id_option'),
 		);
 	}
 	public function rules()
@@ -21,7 +21,7 @@ class ccatalogOptionParam extends AbsModel
 			array('codeval', 'length', 'max'=>225),
 			array('id_option', 'exist',
 				'attributeName'=>'id',
-				'className'=>'ccatalogOption','allowEmpty'=>false), //allowEmpty обязателен
+				'className'=>'ccatalogOption','allowEmpty'=>false,'on'=>array('update')), //allowEmpty обязателен
 		);
 	}
 	public function attributeLabels() {
