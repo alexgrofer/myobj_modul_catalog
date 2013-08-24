@@ -13,7 +13,7 @@ class ccatalogOption extends AbsModel
 	{
 		return array(
 			'ccatalogOptionParam'=>array(self::HAS_MANY, 'ccatalogOptionParam', 'id_option'),
-			'ccatalogCategory'=>array(self::MANY_MANY, 'ccatalogOption', 'setcms_ccatalog_category_option(option_id, category_id)'),
+			'ccatalogCategory'=>array(self::MANY_MANY, 'ccatalogCategory', 'setcms_ccatalog_category_option(option_id, category_id)'),
 		);
 	}
 
