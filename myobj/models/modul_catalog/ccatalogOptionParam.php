@@ -11,7 +11,7 @@ class ccatalogOptionParam extends AbsModel
 	public function relations()
 	{
 		return array(
-			'ccatalogOption'=>array(self::BELONGS_TO, 'ccatalogOption', 'id_option'),
+			'option'=>array(self::BELONGS_TO, 'ccatalogOption', 'id_option'),
 		);
 	}
 	public function rules()

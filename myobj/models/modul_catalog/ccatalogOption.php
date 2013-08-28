@@ -12,8 +12,8 @@ class ccatalogOption extends AbsModel
 	public function relations()
 	{
 		return array(
-			'ccatalogOptionParam'=>array(self::HAS_MANY, 'ccatalogOptionParam', 'id_option'),
-			'ccatalogCategory'=>array(self::MANY_MANY, 'ccatalogCategory', 'setcms_ccatalog_category_option(option_id, category_id)'),
+			'params'=>array(self::HAS_MANY, 'ccatalogOptionParam', 'id_option'),
+			'categories'=>array(self::MANY_MANY, 'ccatalogCategory', 'setcms_ccatalog_category_option(option_id, category_id)'),
 		);
 	}
 
