@@ -22,7 +22,7 @@ class ccatalogCategory extends AbsModel
 			array('codename', 'length', 'max'=>225),
 			array('parent_id', 'exist',
 				'attributeName'=>'id',
-				'className'=>get_class($this),'allowEmpty'=>true),
+				'className'=>get_class($this),'allowEmpty'=>true), //'on'=>array('update') только при обновлении
 		);
 	}
 	public function attributeLabels() {

@@ -4,7 +4,7 @@ CREATE TABLE `setcms_ccatalog_category` (
 	`codename` varchar(255) NOT NULL,
 	`parent_id` int(11) DEFAULT NULL,
 	PRIMARY KEY (`id`),
-	KEY `parent_id` (`parent_id`)
+	FOREIGN KEY (`parent_id`) REFERENCES `setcms_ccatalog_category` (`id`) ON UPDATE CASCADE
 );
 
 CREATE TABLE `setcms_ccatalog_option` (
@@ -12,7 +12,8 @@ CREATE TABLE `setcms_ccatalog_option` (
 	`codename` varchar(255) NOT NULL,
 	`type` tinyint(1) NOT NULL, -- логическое bool, список?
 	`range` varchar(255) DEFAULT '', -- стандартный максимальный диапазон '20-400'
-	PRIMARY KEY (`id`)
+	PRIMARY KEY (`id`),
+	KEY (`codename`)
 );
 
 CREATE TABLE `setcms_ccatalog_category_option` (
@@ -21,8 +22,8 @@ CREATE TABLE `setcms_ccatalog_category_option` (
 	`option_id` int(11) NOT NULL,
 	PRIMARY KEY (`id`),
 	UNIQUE KEY `uk_category_id_option_id` (`category_id`,`option_id`),
-	CONSTRAINT `setcms_ccatalog_category_option_ibfk_category_id` FOREIGN KEY (`category_id`) REFERENCES `setcms_ccatalog_category` (`id`) ON UPDATE CASCADE,
-	CONSTRAINT `setcms_ccatalog_category_option_ibfk_option_id` FOREIGN KEY (`option_id`) REFERENCES `setcms_ccatalog_option` (`id`) ON UPDATE CASCADE
+	FOREIGN KEY (`category_id`) REFERENCES `setcms_ccatalog_category` (`id`) ON DELETE CASCADE,
+	FOREIGN KEY (`option_id`) REFERENCES `setcms_ccatalog_option` (`id`) ON DELETE CASCADE
 );
 
 CREATE TABLE `setcms_ccatalog_option_params` (
@@ -30,5 +31,5 @@ CREATE TABLE `setcms_ccatalog_option_params` (
 	`codeval` varchar(255) NOT NULL,
 	`id_option` int(11) NOT NULL,
 	PRIMARY KEY (`id`),
-	CONSTRAINT `setcms_ccatalog_option_ibfk_id_option` FOREIGN KEY (`id_option`) REFERENCES `setcms_ccatalog_option` (`id`) ON UPDATE CASCADE
+	FOREIGN KEY (`id_option`) REFERENCES `setcms_ccatalog_option` (`id`) ON UPDATE CASCADE
 );

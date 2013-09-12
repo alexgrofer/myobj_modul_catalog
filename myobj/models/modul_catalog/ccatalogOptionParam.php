@@ -19,23 +19,17 @@ class ccatalogOptionParam extends AbsModel
 		return array(
 			array('codeval', 'required'),
 			array('codeval', 'length', 'max'=>225),
-			array('id_option', 'exist',
-				'attributeName'=>'id',
-				'className'=>'ccatalogOption','allowEmpty'=>false,'on'=>array('update')), //allowEmpty обязателен
+			//array('id_option', 'exist','attributeName'=>'id','className'=>'ccatalogOption','allowEmpty'=>false,'on'=>array('update')), //allowEmpty обязателен
 		);
 	}
 	public function attributeLabels() {
 		return array(
 			'codeval' => 'codeval',
-			'id_option' => 'id_option',
 		);
 	}
 	public function ElementsForm() {
 		return array(
 			'codeval'=>array(
-				'type'=>'text',
-			),
-			'id_option'=>array(
 				'type'=>'text',
 			),
 		);
