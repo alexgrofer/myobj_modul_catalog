@@ -1,7 +1,7 @@
 <?php
 $components_user = array(
-	'CCatalog'=>array(
-		'class' =>'application.modules.myobj.components.ccatalog.CCatalog',
+	'Catalog'=>array(
+		'class' =>'MYOBJ.components.catalog.CCatalog',
 	),
 );
 

@@ -1,17 +1,16 @@
 <?php
 $models = array(
-	//STORE
-	'ccatalogCategory' => array(
-		'namemodel' => 'ccatalogCategory',
-		'relation' => array('options'=>array('ccatalogOption','categories'))
+	'catalog_category' => array(
+		'namemodel' => 'CatalogCategory',
+		'relation' => array('options'=>array('catalog_option','categories'))
 	),
-	'ccatalogOption' => array(
-		'namemodel' => 'ccatalogOption',
-		'relation' => array('params'=>array('ccatalogOptionParam','option'),'categories'=>array('ccatalogCategory','options'))
+	'catalog_option' => array(
+		'namemodel' => 'CatalogOption',
+		'relation' => array('params'=>array('catalog_option_param','option'),'categories'=>array('catalog_category','options'))
 	),
-	'ccatalogOptionParam' => array(
-		'namemodel' => 'ccatalogOptionParam',
-		'relation' => array('option'=>array('ccatalogOption','params'))
+	'catalog_option_param' => array(
+		'namemodel' => 'CatalogOptionParam',
+		'relation' => array('option'=>array('catalog_option','params'))
 	),
 	'graphic_sale' => array(
 		'controller' => 'admin/dep_store/graphic_sale.php',
