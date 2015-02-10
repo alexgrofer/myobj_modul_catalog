@@ -2,7 +2,10 @@
 $models = array(
 	'catalog_category' => array(
 		'namemodel' => 'CatalogCategory',
-		'relation' => array('options'=>array('catalog_option','categories'))
+		'relation' => array(
+			'options'=>array('catalog_option','categories'),
+			'parent'=>array('catalog_category','parent'),
+		)
 	),
 	'catalog_option' => array(
 		'namemodel' => 'CatalogOption',

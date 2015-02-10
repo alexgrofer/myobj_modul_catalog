@@ -1,9 +1,7 @@
 <?php
-class CatalogOption extends AbsBaseModel
+class CatalogOptionFaq extends AbsBaseModel
 {
-	public $name;
-	public $codename;
-	public $type;
+	public $text;
 
 	public function tableName()
 	{

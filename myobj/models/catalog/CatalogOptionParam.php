@@ -1,7 +1,7 @@
 <?php
 class CatalogOptionParam extends AbsBaseModel
 {
-	public $codeval;
+	public $val;
 	public $id_option;
 
 	public function tableName()
@@ -11,24 +11,20 @@ class CatalogOptionParam extends AbsBaseModel
 	public function relations()
 	{
 		return array(
-			'option'=>array(self::BELONGS_TO, 'catalogOption', 'id_option'),
+			'option'=>array(self::HAS_ONE, 'catalogOption', 'id_option'),
 		);
 	}
 	public function defaultRules()
 	{
 		return array(
-			array('codeval', 'required'),
-			array('codeval', 'length', 'max'=>225),
+			array('val', 'required'),
+			array('val', 'length', 'max'=>225),
 		);
 	}
-	public function defaultAttributeLabels() {
-		return array(
-			'codeval' => 'codeval',
-		);
-	}
+
 	public function defaultElementsForm() {
 		return array(
-			'codeval'=>array(
+			'val'=>array(
 				'type'=>'text',
 			),
 		);
