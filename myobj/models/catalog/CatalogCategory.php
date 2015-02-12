@@ -33,6 +33,9 @@ class CatalogCategory extends AbsBaseModel
 			'name'=>array(
 				'type'=>'text',
 			),
+			'desc'=>array(
+				'type'=>'text',
+			),
 			'codename'=>array(
 				'type'=>'text',
 			),

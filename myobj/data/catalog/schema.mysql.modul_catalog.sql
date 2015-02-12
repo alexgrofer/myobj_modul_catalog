@@ -13,11 +13,10 @@ CREATE TABLE `setcms_catalog_category` (
 CREATE TABLE `setcms_catalog_option` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`name` varchar(255) NOT NULL,
-	`codename` varchar(255) NOT NULL,
-	`type` tinyint(1) NOT NULL, -- булево (да,нет,неважно), чекбокс - список, радио - список, диапазон
+	`type` tinyint(1) NOT NULL,
+	`conf` varchar(255) NOT NULL DEFAULT '',
 
 	PRIMARY KEY (`id`),
-	UNIQUE KEY (`codename`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `setcms_catalog_option_faq` (
